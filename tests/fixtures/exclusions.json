@@ -1,0 +1,15 @@
+{
+  "applications": [
+    {
+      "appId": "A0000000-0000-4000-8000-000000000003",
+      "reason": "Decommissioned; registration deletion pending change approval"
+    }
+  ],
+  "credentials": [
+    {
+      "keyId": "5ec0f3a1-0000-4000-8000-000000000003",
+      "reason": "Temporary: rotation scheduled for the September release",
+      "until": "2026-09-30"
+    }
+  ]
+}

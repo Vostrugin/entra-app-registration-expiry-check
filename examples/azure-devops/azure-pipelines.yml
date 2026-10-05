@@ -1,0 +1,44 @@
+# Daily check for expired and expiring App Registration secrets and certificates.
+# Setup: examples/azure-devops/README.md
+
+trigger: none
+pr: none
+
+schedules:
+  - cron: '0 6 * * *' # 06:00 UTC every day
+    displayName: Daily credential expiry check
+    branches:
+      include:
+        - main
+    always: true # run even when nothing changed on the branch
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  serviceConnection: 'entra-expiry-check' # the name of your Azure Resource Manager service connection
+  thresholdDays: 30
+
+steps:
+  - checkout: self
+
+  - pwsh: Install-Module Microsoft.Graph.Authentication -Scope CurrentUser -Force
+    displayName: Install the Microsoft Graph authentication module
+
+  - task: AzureCLI@2
+    displayName: Check credentials
+    inputs:
+      azureSubscription: ${{ variables.serviceConnection }}
+      scriptType: pscore
+      scriptLocation: inlineScript
+      inlineScript: |
+        $token = az account get-access-token --resource-type ms-graph --query accessToken -o tsv |
+            ConvertTo-SecureString -AsPlainText -Force
+        ./scripts/Invoke-ExpiryCheck.ps1 -AccessToken $token -ThresholdDays $(thresholdDays) -OutputPath '$(Build.ArtifactStagingDirectory)/report'
+        exit $LASTEXITCODE
+
+  - publish: $(Build.ArtifactStagingDirectory)/report
+    artifact: credential-expiry-report
+    displayName: Keep the report
+    condition: always()
+    continueOnError: true # the folder doesn't exist when the check fails before writing a report

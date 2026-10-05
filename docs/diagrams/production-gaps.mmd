@@ -1,0 +1,17 @@
+flowchart LR
+    subgraph repo["What this repository does"]
+        direction TB
+        read["Read credentials<br/>from Graph"] --> classify["Classify against<br/>a threshold"] --> report["Report and<br/>exit code"]
+    end
+    subgraph todo["What a production setup still needs"]
+        direction TB
+        store[("State<br/>what was already sent")]
+        route["Owner routing<br/>and a fallback recipient"]
+        deliver["Delivery<br/>email, Teams, Slack, tickets"]
+        resolve["Resolution tracking<br/>stop once it's rotated"]
+        audit["Audit trail<br/>who excluded what, and why"]
+        heartbeat["Heartbeat<br/>alert when the check stops running"]
+    end
+    report --> store --> route --> deliver --> resolve
+    audit -.- route
+    heartbeat -.-> deliver

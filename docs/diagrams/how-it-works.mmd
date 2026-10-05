@@ -1,0 +1,12 @@
+flowchart LR
+    sched["Scheduler<br/>Automation, GitHub Actions,<br/>Azure DevOps, cron"] --> cli["Invoke-ExpiryCheck.ps1"]
+    cli --> auth{"Sign in to<br/>Microsoft Graph"}
+    auth -->|managed identity| msgraph
+    auth -->|federated token| msgraph
+    auth -->|certificate| msgraph
+    msgraph["GET /v1.0/applications<br/>selected fields, every page"] --> classify["Classify every secret<br/>and certificate"]
+    excl[("exclusions.json")] -.-> classify
+    classify --> console["Console summary"]
+    classify --> files["JSON and CSV report"]
+    classify --> exitcode["Exit code 0, 1, 2 or 3"]
+    exitcode --> you["Your scheduler decides<br/>who hears about it"]

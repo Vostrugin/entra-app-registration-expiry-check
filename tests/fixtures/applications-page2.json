@@ -1,0 +1,37 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications(id,appId,displayName,passwordCredentials,keyCredentials,owners(id,displayName,userPrincipalName,mail))",
+  "value": [
+    {
+      "id": "0a1b2c3d-0000-4000-8000-000000000004",
+      "appId": "a0000000-0000-4000-8000-000000000004",
+      "displayName": "reporting-worker",
+      "passwordCredentials": [],
+      "keyCredentials": [
+        {
+          "customKeyIdentifier": "mx58Ol0vjktqDB2ej3prXE0+LxA=",
+          "displayName": "CN=reporting-worker",
+          "endDateTime": "2026-10-12T12:00:00Z",
+          "key": null,
+          "keyId": "ce47c000-0000-4000-8000-000000000002",
+          "startDateTime": "2025-10-12T12:00:00Z",
+          "type": "AsymmetricX509Cert",
+          "usage": "Verify"
+        }
+      ],
+      "owners": [
+        {
+          "@odata.type": "#microsoft.graph.user",
+          "id": "0bbe0000-0000-4000-8000-000000000003"
+        }
+      ]
+    },
+    {
+      "id": "0a1b2c3d-0000-4000-8000-000000000005",
+      "appId": "a0000000-0000-4000-8000-000000000005",
+      "displayName": "marketing-site",
+      "passwordCredentials": [],
+      "keyCredentials": [],
+      "owners": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#servicePrincipals(id,appId,displayName,passwordCredentials,keyCredentials,servicePrincipalType)",
+  "value": [
+    {
+      "id": "5b000000-0000-4000-8000-000000000001",
+      "appId": "b0000000-0000-4000-8000-000000000001",
+      "displayName": "Contoso Expenses (SAML)",
+      "servicePrincipalType": "Application",
+      "passwordCredentials": [
+        {
+          "customKeyIdentifier": "wP/uABEiM0RVZneImaq7zN3u/wE=",
+          "displayName": "CN=Microsoft Azure Federated SSO Certificate",
+          "endDateTime": "2026-10-25T08:00:00Z",
+          "hint": null,
+          "keyId": "5ec0f3a1-0000-4000-8000-000000000101",
+          "secretText": null,
+          "startDateTime": "2023-10-25T08:00:00Z"
+        }
+      ],
+      "keyCredentials": [
+        {
+          "customKeyIdentifier": "wP/uABEiM0RVZneImaq7zN3u/wE=",
+          "displayName": "CN=Microsoft Azure Federated SSO Certificate",
+          "endDateTime": "2026-10-25T08:00:00Z",
+          "key": null,
+          "keyId": "ce47c000-0000-4000-8000-000000000101",
+          "startDateTime": "2023-10-25T08:00:00Z",
+          "type": "AsymmetricX509Cert",
+          "usage": "Sign"
+        },
+        {
+          "customKeyIdentifier": "wP/uABEiM0RVZneImaq7zN3u/wE=",
+          "displayName": "CN=Microsoft Azure Federated SSO Certificate",
+          "endDateTime": "2026-10-25T08:00:00Z",
+          "key": null,
+          "keyId": "ce47c000-0000-4000-8000-000000000102",
+          "startDateTime": "2023-10-25T08:00:00Z",
+          "type": "AsymmetricX509Cert",
+          "usage": "Verify"
+        }
+      ]
+    },
+    {
+      "id": "5b000000-0000-4000-8000-000000000002",
+      "appId": "b0000000-0000-4000-8000-000000000002",
+      "displayName": "automation-account-identity",
+      "servicePrincipalType": "ManagedIdentity",
+      "passwordCredentials": [],
+      "keyCredentials": [
+        {
+          "customKeyIdentifier": "PyqcTht9ig9sXk07KhkI9+bVxLM=",
+          "displayName": "CN=managed-identity",
+          "endDateTime": "2026-10-08T00:00:00Z",
+          "key": null,
+          "keyId": "ce47c000-0000-4000-8000-000000000103",
+          "startDateTime": "2026-07-10T00:00:00Z",
+          "type": "AsymmetricX509Cert",
+          "usage": "Verify"
+        }
+      ]
+    }
+  ]
+}
