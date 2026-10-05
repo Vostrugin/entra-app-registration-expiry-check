@@ -1,0 +1,10 @@
+flowchart TD
+    where{"Where does the check run?"}
+    where -->|"Azure Automation, Functions or a VM"| mi["Managed identity<br/>-ManagedIdentity"]
+    where -->|"GitHub Actions or Azure DevOps"| wif["Workload identity federation<br/>-AccessToken"]
+    where -->|"Anywhere else, unattended"| cert["App Registration with a certificate<br/>-CertificateThumbprint"]
+    where -->|"Your own machine"| inter["Interactive sign-in<br/>no switch needed"]
+    mi --> app["Application permission<br/>Application.Read.All, admin consent"]
+    wif --> app
+    cert --> app
+    inter --> deleg["Delegated permission<br/>Application.Read.All"]

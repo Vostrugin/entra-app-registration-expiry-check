@@ -1,0 +1,13 @@
+sequenceDiagram
+    autonumber
+    participant gh as GitHub Actions (scheduled run)
+    participant entra as Microsoft Entra ID
+    participant msgraph as Microsoft Graph
+    gh->>entra: azure/login exchanges the workflow's OIDC token
+    entra-->>gh: Signed in as the federated App Registration
+    gh->>entra: az account get-access-token for Microsoft Graph
+    entra-->>gh: Graph access token
+    gh->>msgraph: GET /v1.0/applications, every page
+    msgraph-->>gh: Apps with passwordCredentials and keyCredentials
+    gh->>gh: Classify, write the report, exit 0 to 3
+    Note over gh: A non-zero exit fails the run, and GitHub<br/>notifies whoever last edited the schedule

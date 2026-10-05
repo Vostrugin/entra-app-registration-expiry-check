@@ -1,0 +1,15 @@
+{
+  "applications": [
+    {
+      "appId": "00000000-0000-0000-0000-000000000000",
+      "reason": "Replace with the Application (client) ID of an app you're decommissioning, and say why"
+    }
+  ],
+  "credentials": [
+    {
+      "keyId": "00000000-0000-0000-0000-000000000000",
+      "reason": "Replace with a Secret ID or Certificate ID you're deliberately letting expire",
+      "until": "2026-12-31"
+    }
+  ]
+}

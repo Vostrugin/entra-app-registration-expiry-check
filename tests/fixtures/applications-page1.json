@@ -1,0 +1,94 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications(id,appId,displayName,passwordCredentials,keyCredentials,owners(id,displayName,userPrincipalName,mail))",
+  "@odata.nextLink": "https://graph.microsoft.com/v1.0/applications?$skiptoken=page2",
+  "value": [
+    {
+      "id": "0a1b2c3d-0000-4000-8000-000000000001",
+      "appId": "a0000000-0000-4000-8000-000000000001",
+      "displayName": "billing-api",
+      "passwordCredentials": [
+        {
+          "customKeyIdentifier": null,
+          "displayName": "prod-2025",
+          "endDateTime": "2026-09-23T10:00:00Z",
+          "hint": "x7Q",
+          "keyId": "5ec0f3a1-0000-4000-8000-000000000001",
+          "secretText": null,
+          "startDateTime": "2025-03-23T10:00:00Z"
+        },
+        {
+          "customKeyIdentifier": null,
+          "displayName": "prod-2026",
+          "endDateTime": "2027-03-01T09:00:00Z",
+          "hint": "Pq2",
+          "keyId": "5ec0f3a1-0000-4000-8000-000000000002",
+          "secretText": null,
+          "startDateTime": "2026-09-01T09:00:00Z"
+        }
+      ],
+      "keyCredentials": [],
+      "owners": [
+        {
+          "@odata.type": "#microsoft.graph.user",
+          "id": "0bbe0000-0000-4000-8000-000000000001",
+          "displayName": "Ana Ruiz",
+          "userPrincipalName": "ana.ruiz@contoso.com",
+          "mail": "ana.ruiz@contoso.com"
+        }
+      ]
+    },
+    {
+      "id": "0a1b2c3d-0000-4000-8000-000000000002",
+      "appId": "a0000000-0000-4000-8000-000000000002",
+      "displayName": "hr-sync",
+      "passwordCredentials": [
+        {
+          "customKeyIdentifier": null,
+          "displayName": "graph-sync",
+          "endDateTime": "2026-10-20T00:00:00Z",
+          "hint": "mK9",
+          "keyId": "5ec0f3a1-0000-4000-8000-000000000003",
+          "secretText": null,
+          "startDateTime": "2026-04-20T00:00:00Z"
+        }
+      ],
+      "keyCredentials": [
+        {
+          "customKeyIdentifier": "PyqcTht9ig9sXk07KhkI9+bVxLM=",
+          "displayName": "CN=hr-sync",
+          "endDateTime": "2027-06-30T00:00:00Z",
+          "key": null,
+          "keyId": "ce47c000-0000-4000-8000-000000000001",
+          "startDateTime": "2025-06-30T00:00:00Z",
+          "type": "AsymmetricX509Cert",
+          "usage": "Verify"
+        }
+      ],
+      "owners": [
+        {
+          "@odata.type": "#microsoft.graph.servicePrincipal",
+          "id": "0bbe0000-0000-4000-8000-000000000002",
+          "displayName": "deploy-bot"
+        }
+      ]
+    },
+    {
+      "id": "0a1b2c3d-0000-4000-8000-000000000003",
+      "appId": "a0000000-0000-4000-8000-000000000003",
+      "displayName": "legacy-portal",
+      "passwordCredentials": [
+        {
+          "customKeyIdentifier": null,
+          "displayName": "",
+          "endDateTime": "2026-06-01T00:00:00Z",
+          "hint": "Zr4",
+          "keyId": "5ec0f3a1-0000-4000-8000-000000000004",
+          "secretText": null,
+          "startDateTime": "2024-06-01T00:00:00Z"
+        }
+      ],
+      "keyCredentials": [],
+      "owners": []
+    }
+  ]
+}
